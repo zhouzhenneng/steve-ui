@@ -1,3 +1,4 @@
+#dist目录下所有文件都是不提交的，ignore一下
 /dist/*
 # Logs
 logs
