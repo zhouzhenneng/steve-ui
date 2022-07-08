@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "types": "dist/lib/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
-    "build": "webpack"
+    "start": "cross-env NODE_ENV=developmen webpack serve --config webpack.config.dev.js",
+    "build": "cross-env NODE_ENV=production webpack  --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "@types/react-dom": "^18.0.6",
     "@webpack-cli/serve": "^1.7.0",
     "awesome-typescript-loader": "^5.2.1",
+    "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
