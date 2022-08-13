@@ -1,9 +1,15 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import Icon from './icon'
 
-ReactDOM.render(
+
+const rootElement = document.getElementById('root')!;
+const root = createRoot(rootElement);
+
+root.render(
   <div>
-    <Icon name="wechat"/>
-  </div>,
-  document.getElementById("root"));
+    <Icon name='twitter'/>
+    <Icon name='facebook'/>
+    <Icon name='instagram'/>
+  </div>
+);
