@@ -1,6 +1,6 @@
-import React from 'react'
+import * as  React from 'react'
 import { createRoot } from 'react-dom/client';
-import Icon from './icon'
+import Icon from './icon/icon'
 
 const fn: React.MouseEventHandler = (e) => {
   console.log(e.target)
