@@ -41,15 +41,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run:
-          name: Run ci
-          command: |
-            mkdir -p ./test-results/junit
-            yarn ci --reporters=jest-junit
-      - store_artifacts:
-          path: ./test-results/junit
+      - run: yarn ci
       - store_test_results:
-          path: ./test-results
+         path: test-results
   publish:
     <<: *defaults
     steps:
