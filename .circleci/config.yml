@@ -42,8 +42,14 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn ci
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/jest/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/jest/ \;
+          when: always
       - store_test_results:
-          path: test-results
+          path:  ~/test-results
   publish:
     <<: *defaults
     steps:
