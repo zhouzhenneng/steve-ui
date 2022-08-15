@@ -43,13 +43,14 @@ jobs:
           at: .
       - run: yarn ci
       - run:
-          name: Save test results
+          name: Run Tests
           command: |
-            mkdir -p ~/test-results/jest/
-            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/jest/ \;
-          when: always
+            mkdir -p ./test-results/junit
+            yarn test --ci --reporters=jest-junit
+      - store_artifacts:
+          path: ./test-results/junit
       - store_test_results:
-          path:  ~/test-results
+          path: ./test-results
   publish:
     <<: *defaults
     steps:
