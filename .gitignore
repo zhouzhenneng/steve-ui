@@ -1,5 +1,7 @@
 #dist目录下所有文件都是不提交的，ignore一下
+/.idea
 /dist/*
+/test-results/
 # Logs
 logs
 *.log
