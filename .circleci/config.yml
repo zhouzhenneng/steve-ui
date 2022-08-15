@@ -42,8 +42,8 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn ci
-     - store_test_results:
-          path: test-results/jest
+      - store_test_results:
+          path: test-results
   publish:
     <<: *defaults
     steps:
