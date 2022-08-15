@@ -41,9 +41,11 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: yarn ci
+      - run: yarn ci --testResultsProcessor="jest-junit"
+      - environment:
+          JEST_JUNIT_OUTPUT: "test-results/jest/results.xml"
       - store_test_results:
-          path: test
+          path: test-results/jest
   publish:
     <<: *defaults
     steps:

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="9" failures="0" errors="0" time="3.135">
-  <testsuite name="我的第一个测试用例" errors="0" failures="0" skipped="0" timestamp="2022-08-15T16:56:28" time="2.285" tests="1">
-    <testcase classname="我的第一个测试用例 1 等于 1" name="我的第一个测试用例 1 等于 1" time="0.003">
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="2.177">
+  <testsuite name="我的第一个测试用例" errors="0" failures="0" skipped="0" timestamp="2022-08-15T17:29:22" time="1.472" tests="1">
+    <testcase classname="我的第一个测试用例 1 等于 1" name="我的第一个测试用例 1 等于 1" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2022-08-15T16:56:28" time="2.426" tests="5">
-    <testcase classname="classes 接收一个classname" name="classes 接收一个classname" time="0.002">
+  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2022-08-15T17:29:22" time="1.629" tests="1">
+    <testcase classname="button 是个div" name="button 是个div" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2022-08-15T17:29:22" time="1.617" tests="5">
+    <testcase classname="classes 接收一个classname" name="classes 接收一个classname" time="0.001">
     </testcase>
     <testcase classname="classes 接收2个classname" name="classes 接收2个classname" time="0">
     </testcase>
@@ -13,17 +17,13 @@
     </testcase>
     <testcase classname="classes 接受undefined 最终classname没有undefined" name="classes 接受undefined 最终classname没有undefined" time="0">
     </testcase>
-    <testcase classname="classes 接收各种奇怪的值" name="classes 接收各种奇怪的值" time="0.001">
+    <testcase classname="classes 接收各种奇怪的值" name="classes 接收各种奇怪的值" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2022-08-15T16:56:28" time="2.46" tests="1">
-    <testcase classname="button 是个div" name="button 是个div" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2022-08-15T16:56:28" time="2.893" tests="2">
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2022-08-15T17:29:22" time="1.974" tests="2">
     <testcase classname="icon render successfully" name="icon render successfully" time="0.005">
     </testcase>
-    <testcase classname="icon onclick" name="icon onclick" time="0.087">
+    <testcase classname="icon onclick" name="icon onclick" time="0.066">
     </testcase>
   </testsuite>
 </testsuites>
