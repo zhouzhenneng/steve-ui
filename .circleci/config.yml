@@ -35,23 +35,21 @@ jobs:
             - package.json
             - LICENSE
             - README.md
-      - run:
-          name: Run Tests
-          command: |
-            mkdir -p ./test-results/junit
-            yarn test --ci --reporters=jest-junit
-      - store_artifacts:
-          path: ./test-results/junit
-      - store_test_results:
-          path: ./test-results
   test:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
           at: .
-      - run: yarn ci
-
+      - run:
+          name: Run ci
+          command: |
+            mkdir -p ./test-results/junit
+            yarn ci --reporters=jest-junit
+      - store_artifacts:
+          path: ./test-results/junit
+      - store_test_results:
+          path: ./test-results
   publish:
     <<: *defaults
     steps:
