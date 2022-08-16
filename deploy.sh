@@ -1,3 +1,3 @@
 #!/usr/bin/env zsh
-npm version v$1 && \
+npm version $1 && \
     git push

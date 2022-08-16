@@ -69,8 +69,8 @@ workflows:
           requires:
             - build
 #         只在v xx.xx.xxx才publish
-          filters:
-            tags:
-              only: /^v[0-9]+(\.[0-9]+)*/
-            branches:
-              ignore: /.*/
+#          filters:
+#            tags:
+#              only: /^v[0-9]+(\.[0-9]+)*/
+#            branches:
+#              ignore: /.*/
