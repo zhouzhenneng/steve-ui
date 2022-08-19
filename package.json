@@ -8,7 +8,7 @@
     "/dist/**/*"
   ],
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
+    "start": "cross-env NODE_ENV=development webpack server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=./test-results jest --config=jest.config.ci.js"
@@ -52,6 +52,8 @@
   },
   "dependencies": {
     "jest-matcher-utils": "^28.1.3",
-    "jsdom-global": "^3.0.2"
+    "jsdom-global": "^3.0.2",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
   }
 }
