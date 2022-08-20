@@ -36,5 +36,5 @@
     "jest",
     "src/setupTests.ts",
     "*.js"
-  ]
+  ],
 }

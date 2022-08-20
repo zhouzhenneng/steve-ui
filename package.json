@@ -27,6 +27,7 @@
     "@webpack-cli/serve": "^1.7.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
     "babel-jest": "^28.1.2",
     "babel-preset-react-app": "^10.0.1",
     "cross-env": "^7.0.3",
