@@ -1,10 +1,15 @@
 import * as React from 'react';
 import {useState} from 'react'
-import Dialog from './dialog';
+import Dialog, {alter, modal} from './dialog';
 
 const DialogExample: React.FunctionComponent = () => {
   const [visible, setVisible] = useState(false);
   const [visible1, setVisible1] = useState(false);
+
+  //modal返回一个close函数，给左边的close， 然后button里面的onclick里面的close就调用左边返回的close
+  // const openModal = () => {
+  //   const close = modal(<h1>hi <button onClick={() => close()}>close</button></h1>)
+  // }
   return (
     <div>
       <div>
@@ -32,6 +37,14 @@ const DialogExample: React.FunctionComponent = () => {
         >
           <div>content</div>
         </Dialog>
+      </div>
+      <div>
+        <h1>alter-demo</h1>
+        <button onClick={() => alter("Error!")}>alter</button>
+      </div>
+      <div>
+        <h1>modal-demo</h1>
+        <button onClick={() => modal("Hi!", () => {console.log('yes')}, () => {console.log("no")})}>modal</button>
       </div>
     </div>
 

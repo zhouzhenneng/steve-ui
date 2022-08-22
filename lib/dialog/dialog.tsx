@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import scopedClassMaker from '../types/classes';
-import {Fragment, ReactElement, ReactNode} from 'react';
+import {Fragment, ReactElement, ReactFragment, ReactNode} from 'react';
 import {Icon} from '../index';
 import './dialog.scss';
 
@@ -9,7 +9,7 @@ import './dialog.scss';
 interface Props {
   visible: boolean;
   children: ReactNode;
-  buttons: Array<ReactElement>;
+  buttons?: Array<ReactElement>;
   onClose: React.MouseEventHandler;
   onCloseMask?: boolean;
 }
@@ -39,10 +39,11 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
           Create your account
         </header>
         <main className={sc('main')}>{props.children}</main>
-        <footer className={sc('footer')}>
-          {props.buttons.map((button, index) =>
+        {props.buttons && props.buttons.length > 0 &&
+          <footer className={sc('footer')}>
+          {props.buttons && props.buttons.map((button, index) =>
             React.cloneElement(button, {key: index}))}
-        </footer>
+          </footer>}
       </div>
     </Fragment>;
   return (
@@ -54,4 +55,46 @@ Dialog.defaultProps = {
   onCloseMask: false,
 };
 
+const alter = (content: ReactNode | ReactFragment, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+  const onClose = () => {
+    ReactDOM.render(React.cloneElement(component, {visible: false}), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove()
+  }
+  const component =
+    <Dialog
+      visible={true}
+      buttons={buttons}
+      onClose={() => {
+        onClose();
+        afterClose && afterClose();
+      }
+    }
+    >
+    {content}
+  </Dialog>
+  const div = document.createElement('div');
+  document.body.append(div);
+  ReactDOM.render(component, div);
+  return onClose;
+}
+const modal = (content: ReactNode | ReactFragment, yes?: () => void, no?: () => void) => {
+  const onYes  = () => {
+    onClose();
+    yes && yes();
+  }
+  const onNo = () => {
+    onClose();
+    no && no()
+  }
+  const buttons = [
+    <button className='sui-dialog-save' onClick={onYes}>save</button>,
+    <button className='sui-dialog-cancel' onClick={onNo}>cancel</button>
+  ]
+  const onClose = alter(content, buttons, no);
+}
+
+
+
+export {alter, modal};
 export default Dialog;
