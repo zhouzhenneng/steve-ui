@@ -4,6 +4,7 @@ import {HashRouter as Router,Routes, Route, Link} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
 import ButtonExample from './lib/button.example';
 import DialogExample from './lib/dialog/dialog.example';
+import LayoutExample from './lib/layout/layout.example';
 
 
 const rootElement = document.getElementById('root');
@@ -29,6 +30,9 @@ root.render(
             <li>
               <Link to='dialog'>Dialog</Link>
             </li>
+            <li>
+              <Link to='layout'>Layout</Link>
+            </li>
           </ul>
         </aside>
         <main>
@@ -36,6 +40,7 @@ root.render(
             <Route path='/icon' element={<IconExample/> }/>
             <Route path='/button' element={<ButtonExample/>}/>
             <Route path='/dialog' element={<DialogExample/>}/>
+            <Route path='layout' element={<LayoutExample/>}/>
           </Routes>
         </main>
       </div>
