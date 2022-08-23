@@ -1,49 +1,58 @@
 import * as React from 'react';
 import {createRoot} from 'react-dom/client';
-import {HashRouter as Router,Routes, Route, Link} from 'react-router-dom';
-import IconExample from './lib/icon/icon.example';
+import {HashRouter as Router,Routes, Route, NavLink,} from 'react-router-dom';
 import ButtonExample from './lib/button.example';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
+import {Layout, Header, Footer, Aside, Content} from "./lib/layout/layout"
+import './example.scss'
+import IconDemo from './lib/icon/icon.demo';
+const logo = require("./logo.png")
+console.log('logo')
+console.log(logo)
 
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);
 root.render(
   <Router>
-    <div>
-      <header>
-        <div className="loge">
-          SUI
+    <Layout className="site-page">
+      <Header className="site-header" >
+        <div className="logo">
+          <img src={logo} width="48" height="48" alt=""/>
+          <span> Sui-react </span>
         </div>
-      </header>
-      <div>
-        <aside>
-          <h2>组件</h2>
+      </Header>
+      <Layout>
+        <Aside className="site-aside">
+          <h2>Component</h2>
           <ul>
             <li>
-              <Link to='icon'>Icon</Link>
+              <NavLink to='icon'>Icon</NavLink>
             </li>
             <li>
-              <Link to='button'>Button</Link>
+              <NavLink to='button'>Button</NavLink>
             </li>
             <li>
-              <Link to='dialog'>Dialog</Link>
+              <NavLink to='dialog'>Dialog</NavLink>
             </li>
             <li>
-              <Link to='layout'>Layout</Link>
+              <NavLink to='layout'>Layout</NavLink>
             </li>
           </ul>
-        </aside>
-        <main>
+        </Aside>
+        <Content className="site-main">
           <Routes>
-            <Route path='/icon' element={<IconExample/> }/>
+            <Route path='/icon' element={<IconDemo/> }/>
             <Route path='/button' element={<ButtonExample/>}/>
             <Route path='/dialog' element={<DialogExample/>}/>
             <Route path='layout' element={<LayoutExample/>}/>
           </Routes>
-        </main>
-      </div>
-    </div>
+        </Content>
+      </Layout>
+      <Footer  className="site-footer">
+        &copy; 2022 Steve
+      </Footer>
+    </Layout>
   </Router>
 );

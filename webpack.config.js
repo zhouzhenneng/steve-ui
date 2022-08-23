@@ -25,7 +25,20 @@ module.exports = {
     {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader']
-    }
+    },
+    {
+      test: /\.(png|jpg|jpeg|gif)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[contenthash].[ext]',
+            outputPath: 'static/img',
+            esModule: false // <- here
+          }
+        }
+      ]
+    },
     ]
   }
 }

@@ -9,17 +9,17 @@ import "./layout.example.scss"
 const LayoutExample: React.FunctionComponent = () => {
   return (
     <div className='layout-demo'>
-      <div >
+      <div className="demo-container">
         <h1>demo-1</h1>
-        <Layout className='demo'>
+        <Layout className='demo' style={{height: 400, width: 800}}>
           <Header className="header">Header</Header>
           <Content className="content">Content</Content>
           <Footer className="footer">Footer</Footer>
         </Layout>
       </div>
-      <div >
+      <div className="demo-container">
         <h1>demo-2</h1>
-        <Layout className='demo'>
+        <Layout className='demo' style={{height: 400, width: 800}}>
           <Header className="header">Header</Header>
           <Layout>
             <Aside className='aside'>Aside</Aside>
@@ -28,9 +28,9 @@ const LayoutExample: React.FunctionComponent = () => {
           <Footer className="footer">Footer</Footer>
         </Layout>
       </div>
-      <div>
+      <div className="demo-container">
         <h1>demo-3</h1>
-        <Layout className='demo'>
+        <Layout className='demo' style={{height: 400, width: 800}}>
           <Header className="header">Header</Header>
           <Layout>
             <Content className="content">Content</Content>
@@ -39,9 +39,9 @@ const LayoutExample: React.FunctionComponent = () => {
           <Footer className="footer">Footer</Footer>
         </Layout>
       </div>
-      <div>
+      <div className="demo-container">
         <h1>demo-4</h1>
-        <Layout className='demo'>
+        <Layout className='demo' style={{height: 400, width: 800}}>
           <Aside className='aside'>Aside</Aside>
           <Layout>
             <Header className="header">Header</Header>
