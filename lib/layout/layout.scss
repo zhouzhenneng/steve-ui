@@ -1,0 +1,20 @@
+.sui-layout{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 600px;
+
+  &-content{
+    flex-grow: 1;
+  }
+  & &{
+    flex-grow: 1;
+    flex-direction: row;
+  }
+  &-hasAside{
+    flex-direction: row;
+    .sui-layout{
+      flex-direction: column;
+    }
+  }
+}
