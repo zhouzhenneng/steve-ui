@@ -1,0 +1,72 @@
+* {margin: 0;padding: 0; box-sizing: border-box;}
+*::before {box-sizing: border-box;}
+*::after {box-sizing: border-box;}
+ul, ol {list-style: none;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+a { text-decoration: none; color: inherit; }
+pre {
+  font-family: "Fira Code Medium", Consolas, monospace;
+}
+$padding: 16px;
+$main-color: #7fc7cb;
+$border-color: #eee;
+body {
+  font-size: 16px;
+}
+.site-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+.site-main {
+  padding-top: 16px;
+}
+.site-header {
+  background-image: linear-gradient(to right, #3c849d,#7a5bcd);
+  padding: 8px 0;
+  .logo {
+    padding: 0 $padding;
+    display: flex;
+    align-items: center;
+    > img {margin-right: 8px;}
+    > span {
+      color: #2f3748;
+      font-size: 32px;
+    }
+  }
+}
+.site-aside {
+  border-right: 1px solid #EEEEEE;
+  margin-right: 16px;
+  h2 {
+    padding: $padding;
+    font-size: 18px;
+  }
+  ul {
+    min-width: 12em;
+    > li {
+      a {
+        color: #333;
+        display: block;
+        padding: 8px $padding;
+        &:hover {
+          color: $main-color;
+          cursor: pointer;
+        }
+        &.active {
+          color: #375d62;
+          background: #ebfffa;
+        }
+      }
+    }
+  }
+}
+.site-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding: 16px 0;
+  border-top: 1px solid $border-color;
+}
+.example {
+  padding: 16px 0;
+}
